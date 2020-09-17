@@ -21,6 +21,15 @@ describe("enhancer functions", () => {
       });
     });
 
+    test("Should be false", () => {
+      const item = {
+        name: "Bob",
+        durability: 0,
+        enhancement: 0,
+      };
+      expect(repair(item.name)).toEqual(0);
+    });
+
     describe("these should fail:", () => {
       describe("accepts an item object and returns a new item with the durability restored to 100", () => {
         test("Should restore durability to 100", () => {
